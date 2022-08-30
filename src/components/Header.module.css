@@ -12,4 +12,24 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+   
  }
+
+ .logo { 
+   padding: 0.5rem 0;
+ }
+
+ .login { 
+   color: #333;
+   
+ }
+.login::after {
+   content: '';
+   display: inline-block;
+   width: 14px;
+   height: 17px;
+   background: url('../Assets/usuario.svg') no-repeat center center;
+   margin-left: .5rem;
+   position: relative;
+   top: 2px;
+}
