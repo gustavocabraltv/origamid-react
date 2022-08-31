@@ -28,18 +28,9 @@ const LoginForm = () => {
     <section>
       <h1>Login</h1>
       <form action="" onSubmit={handleSubmit}>
-        <Input label='Usuario' type='text' name='username'/>
-        <Input label='Senha' type='password'  name='password'/>
-        <input
-          type="text"
-          value={username}
-          onChange={({ target }) => setUsername(target.value)}
-        />
-        <input
-          type="text"
-          value={password}
-          onChange={({ target }) => setPassword(target.value)}
-        />
+        <Input label='Usuario' type='text' name='username' value={username} onChange={({ target }) => setUsername(target.value)}/>
+        <Input label='Senha' type='password'  name='password' value={password} onChange={({ target }) => setPassword(target.value)}/>
+       
         <Button>Entrar</Button>
         
       </form>
