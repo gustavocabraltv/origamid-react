@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Input from '../Forms/Input' 
 
-const LoginForm = () => {
+const LoginForm = () => {   
   const [username, setUsername] = React.useState('');
   const [password, setPassword] = React.useState('');
 
@@ -14,8 +14,7 @@ const LoginForm = () => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ username, password }),
-    })
-      .then((response) => {
+    }).then((response) => {
         console.log(response);
         return response.json();
       })
