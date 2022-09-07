@@ -10,7 +10,7 @@ const Login = () => {
             <Route path='/' element={<LoginForm/>}/>
             <Route path='criar' element={<LoginCreate/>}/>
         </Routes>
-        <p>LOGIN</p>
+        <p>LOGINS</p>
     </div>)
 }
 
