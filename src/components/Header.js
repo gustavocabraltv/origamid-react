@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import styles from './Header.module.css'
 import {ReactComponent as Dogs} from '../Assets/dogs.svg'
 import { UserContext } from '../UserContext'
+//import Dogs from '../Assets/dogs.svg';
 
 const Header = () => {
     const {data} = React.useContext(UserContext)

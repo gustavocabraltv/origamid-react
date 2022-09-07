@@ -5,7 +5,7 @@ import LoginForm from './LoginForm'
 
 const Login = () => {
     return(
-    <div>
+    <div className='container'>
         <Routes>    
             <Route path='/' element={<LoginForm/>}/>
             <Route path='criar' element={<LoginCreate/>}/>
