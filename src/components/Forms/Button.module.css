@@ -20,5 +20,8 @@
   
   .button:disabled {
     opacity: 0.5;
+    outline: none;
+    border: none;
     cursor: wait;
+    box-shadow: none;
   }
