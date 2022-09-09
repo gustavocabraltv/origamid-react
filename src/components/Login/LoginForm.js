@@ -37,7 +37,7 @@ const LoginForm = () => {
         <Input label="Usuário" type="text" name="username" {...username} />
         <Input label="Senha" type="password" name="password" {...password} />
       
-        {loading ? <Button>Carregando</Button> : <Button>Entrar</Button>}
+        {loading ? <SubmitButton>Carregando</SubmitButton> : <SubmitButton>Entrar</SubmitButton>}
         <Error error={error}/>
       </form>
       <Link to="/login/criar">Cadastro</Link>
