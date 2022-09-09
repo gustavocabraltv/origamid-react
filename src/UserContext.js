@@ -7,7 +7,7 @@ export const UserStorage = ({ children }) => {
   const [data, setData] = React.useState(null);
   const [login, setLogin] = React.useState(null);
   const [error, setError] = React.useState(null);
-  const [loading, setLoading] = React.useState(null);
+  const [loading, setLoading] = React.useState(false);
 
   React.useEffect(()=> {
     async function autoLogin(){
@@ -23,7 +23,7 @@ export const UserStorage = ({ children }) => {
           await getUser(token)
          
         } catch (err) {
-          
+          userLogout()
         }finally{
           setLoading(false)
 
@@ -51,15 +51,25 @@ export const UserStorage = ({ children }) => {
   }
 
   async function userLogin(username, password) {
+    try {
+    setError(null)
+    setLoading(true)
     const { url, options } = TOKEN_POST({ username, password });
     const tokenRes = await fetch(url, options);
+    if(!tokenRes.ok) throw new Error(`Error: ${tokenRes.statusText}`)
     const { token } = await tokenRes.json();
     window.localStorage.setItem('token', token);
-    getUser(token);
+    await getUser(token);
+    } catch (err) {
+      setError(err.message);
+      setLogin(false)
+    }finally{
+      setLoading(false)
+    }
   }
 
   return (
-    <UserContext.Provider value={{ userLogin, data, userLogout }}>
+    <UserContext.Provider value={{ userLogin, data, userLogout, error, login, loading }}>
       {children}
     </UserContext.Provider>
   );
