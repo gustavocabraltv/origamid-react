@@ -11,7 +11,6 @@ const Login = () => {
 
     return(
     <div className={styles.login}>
-     <aside><p>teste</p></aside>
       <div className={styles.forms}>
         <Routes>    
                 <Route path='/' element={<LoginForm/>}/>
